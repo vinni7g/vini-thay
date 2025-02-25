@@ -1,6 +1,24 @@
 body {
     background-color: #202020;
     font-family: Arial, Helvetica, sans-serif;
+
+    /* Começa pequeno e invisível */
+    transform: scale(0.5);
+    opacity: 0;
+
+    /* Transição suave */
+    animation: expandir 0.8s ease-out forwards;
+}
+
+@keyframes expandir {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .titulo {
@@ -10,7 +28,7 @@ body {
 
 img {
     width: 350px;
-    height: 540px;
+    height: 450px;
     display: block;
     margin: 0 auto;
 }
@@ -37,7 +55,7 @@ p {
     text-align: justify;
 }
 
-/* ❤️ Estilo para os corações que caem */
+/* Corações caindo */
 .heart {
     position: fixed;
     top: -50px;
@@ -46,7 +64,6 @@ p {
     animation: fall linear infinite;
 }
 
-/* Animação para os corações caindo */
 @keyframes fall {
     to {
         transform: translateY(100vh);
